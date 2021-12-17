@@ -1,0 +1,21 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    max-height: 250px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    position: sticky;
+}
+
+.message {
+    margin: 1px;
+    border: 1px solid gold;
+    font-size: smaller;
+    max-width: 400px;
+    max-height: 200px;
+}
+
+.messageForm {
+    max-width: 30%;
+}
