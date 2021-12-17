@@ -11,7 +11,6 @@ import { MessageForm } from "./messages/MessageForm";
 import { TaskList } from "./tasks/TaskList";
 import { TaskForm } from "./tasks/TaskForm";
 import { Logout } from "./auth/Logout";
-import { Home } from "./Home";
 import { NewsList } from "./news/NewsList"
 import { NewsProvider } from "./news/NewsProvider"
 import { NewsForm } from "./news/NewsForm";
