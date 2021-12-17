@@ -1,55 +1,30 @@
-import { Route } from "react-router-dom";
-import React, { Component } from "react";
+import { Route, Routes, } from "react-router-dom";
+import React from "react";
+import { Register } from "./auth/Register";
+import { Login } from "./auth/Login";
+import { Logout } from "./auth/Logout";
+import { Home } from "./Home";
+import { NewsList } from "./news/NewsList"
+import { NewsProvider } from "./news/NewsProvider"
+import { NewsForm } from "./news/NewsForm";
 
-export default class ApplicationViews extends Component {
 
-  render() {
-    return (
-      <React.Fragment>
+export const ApplicationViews = () => {
+  return (
 
-        <Route
-          exact path="/" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
-          }}
-        />
+    <NewsProvider>
+      <Routes>
 
-        <Route
-          exact path="/register" render={props => {
-            return null
-            // Remove null and return the component which will handle user registration
-          }}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="articles/*" element={<NewsList />} />
+        <Route path="articles/create/*" element={<NewsForm />} />
+        <Route path="/articles/edit/:articleId/*" element={<NewsForm />} />
+    
 
-        <Route
-          path="/friends" render={props => {
-            return null
-            // Remove null and return the component which will show list of friends
-          }}
-        />
-
-        <Route
-          path="/messages" render={props => {
-            return null
-            // Remove null and return the component which will show the messages
-          }}
-        />
-
-        <Route
-          path="/tasks" render={props => {
-            return null
-            // Remove null and return the component which will show the user's tasks
-          }}
-        />
-
-        <Route
-          path="/events" render={props => {
-            return null
-            // Remove null and return the component which will show the user's events
-          }}
-        />
-
-      </React.Fragment>
-    );
-  }
+        </Routes>
+    </NewsProvider>
+  )
 }
