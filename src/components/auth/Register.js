@@ -4,7 +4,6 @@ import "./Login.css"
 
 export const Register = (props) => {
     const firstName = useRef()
-    const lastName = useRef()
     const email = useRef()
     const verifyPassword = useRef()
     const conflictDialog = useRef()
